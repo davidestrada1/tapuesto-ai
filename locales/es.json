@@ -1,0 +1,216 @@
+{
+  "header": {
+    "markets": "Mercados",
+    "about": "Nosotros",
+    "leaderboard": "Clasificación",
+    "architecture": "Arquitectura",
+    "connectWallet": "Conectar Billetera",
+    "home": "Inicio"
+  },
+  "landing": {
+    "live": "En vivo en Perú",
+    "titlePrefix": "El Futuro de la",
+    "titleHighlight": "Verdad en Perú",
+    "description": "Tapuesto.ai es el principal mercado de predicciones del Perú. Únete a la inteligencia colectiva para combatir la desinformación y gana recompensas con pronósticos precisos.",
+    "startPredicting": "Empezar a Predecir",
+    "readWhitepaper": "Leer Whitepaper",
+    "regulated": "Totalmente Regulado",
+    "secureAssets": "Activos Seguros",
+    "stats": {
+      "volume": "Volumen Total Operado",
+      "predictors": "Predictores Activos",
+      "uptime": "Disponibilidad",
+      "support": "Soporte"
+    },
+    "trending": {
+      "title": "Mercados en Tendencia",
+      "subtitle": "Descubre qué está prediciendo el Perú ahora mismo.",
+      "viewAll": "Ver todos los mercados"
+    },
+    "cta": {
+      "title": "¿Listo para ver el futuro?",
+      "subtitle": "Únete a miles de peruanos que están prediciendo las noticias en lugar de solo leerlas.",
+      "connect": "Conectar Billetera para Empezar",
+      "viewAll": "Ver Todos los Mercados"
+    },
+    "demoMarkets": {
+      "m1": {
+        "title": "¿Crecerá el PBI de Perú más del 3% en 2024?",
+        "tag": "Economía",
+        "expiry": "31 Dic"
+      },
+      "m2": {
+        "title": "¿Renunciará el Ministro de Economía antes de julio?",
+        "tag": "Política",
+        "expiry": "30 Jun"
+      },
+      "m3": {
+        "title": "¿Clasificará Perú al Mundial 2026?",
+        "tag": "Deportes",
+        "expiry": "Nov 2025"
+      },
+      "card1": {
+        "tag": "Política",
+        "title": "¿Ganador de las Próximas Elecciones?"
+      },
+      "card2": {
+        "tag": "Economía",
+        "title": "¿Crecimiento PBI Perú > 3.5% en 2024?"
+      }
+    }
+  },
+  "marketCard": {
+    "expires": "Vence:",
+    "vol": "Vol:",
+    "yes": "Sí",
+    "no": "No",
+    "buyYes": "Comprar Sí",
+    "buyNo": "Comprar No"
+  },
+  "dashboard": {
+    "panel": "Panel",
+    "leaders": "Líderes",
+    "balance": "Balance",
+    "welcome": "Bienvenido de nuevo, Alejandro.",
+    "totalBalance": "Balance Total",
+    "hitRate": "Tasa de Acierto",
+    "myActiveBets": "Mis Apuestas Activas",
+    "newPrediction": "+ Nueva Predicción",
+    "market": "Mercado",
+    "result": "Resultado",
+    "wagered": "Apostado",
+    "gdpGrowth": "Crecimiento PBI T4 > 3%",
+    "winnerPeruBrazil": "Ganador Perú vs Brasil",
+    "draw": "Empate",
+    "recentActivity": "Actividad Reciente",
+    "betResolved": "Apuesta Resuelta:",
+    "missPeruEnded": "\"Miss Perú 2024\" finalizó.",
+    "profit": "Ganancia"
+  },
+  "profile": {
+    "profile": "Perfil",
+    "memberSince": "Miembro desde Marzo 2024",
+    "createMarket": "Crear Mercado",
+    "eloRating": "Calificación Elo",
+    "totalEarnings": "Ganancias Totales",
+    "activeBets": "Apuestas Activas",
+    "resolvedBets": "Apuestas Resueltas",
+    "marketEvent": "Evento de Mercado",
+    "prediction": "Predicción",
+    "bet": "Apuesta",
+    "gdpGrowthQ3": "¿Crecerá el PBI de Perú >2% en el Q3?"
+  },
+  "leaderboard": {
+    "titlePrefix": "Ciudadanos Sabios:",
+    "titleHighlight": "Mejores Predictores",
+    "description": "Midiendo la inteligencia colectiva del Perú. Sube de rango haciendo predicciones precisas.",
+    "silverTier": "Nivel Plata",
+    "grandmaster": "Gran Maestro",
+    "bronzeTier": "Nivel Bronce",
+    "rank": "Rango",
+    "wiseCitizen": "Ciudadano Sabio"
+  },
+  "register": {
+    "heroTitle": "Únete a la Inteligencia Colectiva",
+    "heroDescription": "Predice resultados, combate la desinformación y gana reputación en el mercado de predicciones líder en Perú.",
+    "alreadyMember": "¿Ya eres miembro?",
+    "login": "Iniciar sesión",
+    "createAccountTitle": "Crear una cuenta",
+    "createAccountDescription": "Ingresa tus datos para empezar a predecir hoy.",
+    "nickname": "Apodo",
+    "nicknamePlaceholder": "predictor_unico",
+    "createAccountButton": "Crear Cuenta"
+  },
+  "createMarket": {
+    "title": "Crear Apuesta",
+    "step1of2": "Paso 1 de 2",
+    "step1Title": "1. Tipo de Apuesta",
+    "duel": "Duelo (1v1)",
+    "duelDesc": "Tú vs. Otra persona",
+    "group": "Grupal (Panda)",
+    "groupDesc": "Varios participantes",
+    "step2Title": "2. ¿Qué apostamos?",
+    "money": "Dinero (Cash)",
+    "other": "Especie / Otro",
+    "totalAmount": "Monto Total a Apostar",
+    "downPayment": "Cuota Inicial (Down Payment)",
+    "required": "Obligatorio",
+    "downPaymentDesc": "Monto necesario para entrar a la apuesta.",
+    "describeBet": "Describe la apuesta",
+    "describeBetPlaceholder": "Ej. Una botella de Blue Label, Una cena en Maido, Lavar los platos por una semana...",
+    "step3Title": "3. El Evento",
+    "analyzing": "Analizando...",
+    "improveAI": "Mejorar con IA",
+    "eventPlaceholder": "Ej. ¿Quién bajará más de peso para el verano?",
+    "aiSuggestion": "Sugerencia IA:",
+    "step4Title": "4. Reglas del Juego",
+    "deadline": "Fecha Límite (Deadline)",
+    "deadlineDesc": "Después de esta fecha, se habilitará la opción para subir pruebas.",
+    "proofQuestion": "¿Cómo se prueba al ganador?",
+    "photo": "Foto",
+    "video": "Video",
+    "voucher": "Voucher",
+    "webLink": "Link Web",
+    "dataSource": "Fuente de Datos (Opcional)",
+    "submit": "Crear Mercado y Compartir",
+    "termsPrefix": "Al crear, aceptas nuestros",
+    "terms": "Términos",
+    "and": "y",
+    "privacy": "Política de Privacidad",
+    "errorMsg": "Ocurrió un error al analizar el tema. Por favor intenta de nuevo."
+  },
+  "challenge": {
+    "active": "Desafío Activo",
+    "title": "¡Te han desafiado!",
+    "description": "Tu oponente ha bloqueado sus fondos. Acepta la apuesta para igualar su monto y activar el contrato inteligente.",
+    "challenger": "Desafiante",
+    "question": "¿Bajará la inflación de Perú por debajo del 3% para diciembre de 2024?",
+    "accept": "Aceptar Desafío"
+  },
+  "portfolio": {
+    "backToHome": "Volver al Inicio",
+    "devPortfolio": "Portafolio de Desarrollador",
+    "heroTitle": "Construyendo un Mercado de",
+    "heroHighlight": "Predicciones Descentralizado",
+    "heroDesc": "Tapuesto.ai fue construido para combatir la desinformación aprovechando la inteligencia colectiva. Esta página muestra la arquitectura del sistema, destacando específicamente el flujo de creación de mercados impulsado por IA.",
+    "systemArch": "Arquitectura del Sistema",
+    "systemArchDesc": "Vista de alto nivel de cómo interactúan las capas de frontend, IA y datos.",
+    "reactClient": "Cliente React",
+    "geminiApi": "API de Gemini",
+    "validationSearch": "Validación y Búsqueda en Google",
+    "marketState": "Estado del Mercado",
+    "appState": "Estado de la App / Contratos Inteligentes",
+    "aiIntegration": "Integración de IA: El Motor Gemini",
+    "aiIntegrationDesc": "Cómo usamos Gemini Flash de Google para validar mercados de predicción.",
+    "fastObjective": "Resolución Rápida y Objetiva",
+    "fastObjectiveDesc": "Los mercados de predicción requieren preguntas binarias claras y sin ambigüedades (Sí/No). Cuando los usuarios proponen un tema, consultamos el modelo gemini-3-flash-preview.",
+    "contextualAnalysis": "Análisis Contextual:",
+    "contextualAnalysisDesc": "Transforma ideas vagas en preguntas estrictas de SÍ/NO.",
+    "googleSearch": "Verificación con Google Search:",
+    "googleSearchDesc": "Valida si el mercado es relevante y factual basándose en datos de búsqueda web en vivo.",
+    "structuredOutput": "Salida Estructurada:",
+    "structuredOutputDesc": "Devuelve una predicción limpia y un razonamiento para que el usuario lo revise.",
+    "userFlow": "Flujo de Usuario: Creando un Mercado",
+    "step1Title": "1. Tema de Entrada",
+    "step1Desc": "El usuario escribe una idea aproximada para un mercado (ej. \"¿Bajará la inflación este año?\").",
+    "step2Title": "2. Mejora con IA",
+    "step2Desc": "Gemini lo reformatea en una métrica clara y apostable respaldada por datos recientes de Búsqueda de Google.",
+    "step3Title": "3. Aprobación del Usuario",
+    "step3Desc": "El usuario configura la apuesta, fechas límite y prueba requerida, aceptando la propuesta de la IA.",
+    "step4Title": "4. Mercado en Vivo",
+    "step4Desc": "¡El mercado es creado y compartible para que otros comiencen a apostar!"
+  },
+  "privacy": {
+    "back": "Volver",
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 20 de Mayo, 2024",
+    "section1Title": "1. Recopilación de Información",
+    "section1Desc": "En tapuesto.ai, recopilamos información necesaria para la operación del mercado de predicciones, incluyendo datos de perfil (apodo, correo electrónico) y datos transaccionales relacionados con sus apuestas.",
+    "section2Title": "2. Uso de Datos Financieros",
+    "section2Desc": "No almacenamos directamente la información de sus tarjetas de crédito o cuentas bancarias. Utilizamos procesadores de pago seguros y regulados para gestionar las transacciones en Soles (PEN).",
+    "section3Title": "3. Compartir con Terceros",
+    "section3Desc": "No vendemos sus datos personales. La información pública de sus predicciones (historial de apuestas) es visible en la plataforma para fines de cálculo de reputación (Elo).",
+    "section4Title": "4. Seguridad",
+    "section4Desc": "Implementamos medidas de seguridad estándar de la industria para proteger sus datos. Sin embargo, ninguna transmisión por internet es 100% segura."
+  }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from '../components/LanguageToggle';
 
 const LeaderboardPage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <div className="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white min-h-screen flex flex-col">
             <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 dark:border-b-[#233c48] bg-white dark:bg-[#111c22] px-6 md:px-10 py-3">
@@ -12,11 +15,12 @@ const LeaderboardPage = () => {
                 </div>
                 <div className="hidden md:flex flex-1 justify-end gap-8">
                     <nav className="flex items-center gap-9">
-                        <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">Inicio</Link>
-                        <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">Mercados</Link>
-                        <span className="text-primary text-sm font-bold">Tabla de Líderes</span>
+                        <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">{t('header.home')}</Link>
+                        <Link to="/dashboard" className="text-sm font-medium hover:text-primary transition-colors">{t('header.markets')}</Link>
+                        <span className="text-primary text-sm font-bold">{t('header.leaderboard')}</span>
                     </nav>
                     <div className="flex items-center gap-4">
+                        <LanguageToggle />
                         <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 ring-2 ring-primary/20 cursor-pointer" onClick={() => navigate('/profile')} style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnY5fUlbf3SMBhYPtAdMrY3IHTBymBoUaeZvCYaxh0L2f5oU7PGncdN9ApN3LbpnJ6b-YExDMI7feUdY4cTZu8lOtiFUK_b4OGIUOKKYRGyYZZc99Tc2RpKqCQFQp67ezngUxm6uaOCpd3JdOTochGqqDMF5ijC_cu-txzPKGYntXzrjfvqX7XDHeyVRFs3OI3zdE6zbHzrLPUHvcM60BmDJ10vW5O0ZVjnMCAUhVyXA5ezeWMgo3QWdXa0ymS5x-tye9oCizMS8I")' }}></div>
                     </div>
                 </div>
@@ -24,8 +28,8 @@ const LeaderboardPage = () => {
             <main className="flex-grow flex flex-col items-center w-full">
                 <div className="w-full max-w-[1200px] px-4 md:px-10 py-6 md:py-10">
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-transparent p-8 md:p-12 text-center border border-gray-200 dark:border-[#233c48]">
-                        <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Ciudadanos Sabios: <span className="text-primary">Mejores Predictores</span></h1>
-                        <p className="text-base md:text-lg text-slate-600 dark:text-[#92b7c9] max-w-2xl mx-auto mt-2">Midiendo la inteligencia colectiva del Perú. Sube de rango haciendo predicciones precisas.</p>
+                        <h1 className="text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">{t('leaderboard.titlePrefix')} <span className="text-primary">{t('leaderboard.titleHighlight')}</span></h1>
+                        <p className="text-base md:text-lg text-slate-600 dark:text-[#92b7c9] max-w-2xl mx-auto mt-2">{t('leaderboard.description')}</p>
                     </div>
                 </div>
                 <div className="w-full max-w-[1200px] px-4 md:px-10 pb-20 flex flex-col gap-8">
@@ -37,7 +41,7 @@ const LeaderboardPage = () => {
                                     <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-gray-300 dark:ring-slate-600" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCblme3Nn2aMhgTwl05OEFox0hHJj-wUO7AheAm4edH38DlmyNl1jQp45QAATiYo3QDBwgMI99VhrStDOzmhRq5e22wqt60B9Mob1ttdpnnMzM7Rj6K0wtbSsZMznlqHBpgKBYREIVPvblssbG04rAmxRv161uf02r1CpjpYSpMiIsC9_fgaRgr30cpjmXClDn8xUkuw_L_JhWdrHd5EpvJzCAEdTRu0I_SgNs4sDNYMLH1hhVcKFlFsOMByMckjm3qofRRq4uUqnc')" }}></div>
                                     <div className="absolute -bottom-2 -right-2 bg-gray-300 dark:bg-slate-600 text-slate-800 dark:text-white text-xs font-bold px-2 py-0.5 rounded-full">#2</div>
                                 </div>
-                                <div><h3 className="text-lg font-bold">LimaOracle</h3><p className="text-slate-500 dark:text-slate-400 text-sm">Nivel Plata</p></div>
+                                <div><h3 className="text-lg font-bold">LimaOracle</h3><p className="text-slate-500 dark:text-slate-400 text-sm">{t('leaderboard.silverTier')}</p></div>
                             </div>
                             <div className="flex justify-between items-end"><div className="flex flex-col"><span className="text-xs text-slate-500 font-bold uppercase">Elo</span><span className="text-2xl font-black">2,350</span></div></div>
                         </div>
@@ -50,7 +54,7 @@ const LeaderboardPage = () => {
                                     <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 text-sm font-bold px-3 py-0.5 rounded-full">#1</div>
                                 </div>
                                 <h3 className="text-xl font-bold mt-2">ElSabio_PE</h3>
-                                <p className="text-primary text-sm font-medium">Gran Maestro</p>
+                                <p className="text-primary text-sm font-medium">{t('leaderboard.grandmaster')}</p>
                             </div>
                             <div className="mt-auto border-t border-gray-100 dark:border-slate-700/50 pt-4">
                                 <div className="flex justify-between items-end"><div className="flex flex-col"><span className="text-xs text-slate-500 font-bold uppercase">Elo</span><span className="text-4xl font-black text-primary">2,400</span></div></div>
@@ -63,7 +67,7 @@ const LeaderboardPage = () => {
                                     <div className="w-16 h-16 rounded-full bg-cover bg-center ring-4 ring-amber-700/50" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9LU2CrB-GMKcYbVFh5SRfm8w8hiiJUsBIBleOH24AtgvmI14b3fW1cvDC9HsHvBIeSoljvPGwhXSmSRMWu9fw9OC_YmHFt2vtXinYJCkjcsXbCiWK90Fvjvg0AGDbPG8hLqg8DoFrcB9aI6tuju006wTyvq1UBqbXZXWfse7CyEDhFQH1K4pLpEOMJ7V1BcN82JDwCezD4CgQZ4PVMlMz3xIuyYljXnSv5qY2mG6NWjYa5oK_oFFOb8O384Quyi2yeCgRUNzOoDk')" }}></div>
                                     <div className="absolute -bottom-2 -right-2 bg-amber-700/80 text-white text-xs font-bold px-2 py-0.5 rounded-full">#3</div>
                                 </div>
-                                <div><h3 className="text-lg font-bold">CuscoData</h3><p className="text-slate-500 dark:text-slate-400 text-sm">Nivel Bronce</p></div>
+                                <div><h3 className="text-lg font-bold">CuscoData</h3><p className="text-slate-500 dark:text-slate-400 text-sm">{t('leaderboard.bronzeTier')}</p></div>
                             </div>
                             <div className="flex justify-between items-end"><div className="flex flex-col"><span className="text-xs text-slate-500 font-bold uppercase">Elo</span><span className="text-2xl font-black">2,310</span></div></div>
                         </div>
@@ -73,8 +77,8 @@ const LeaderboardPage = () => {
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-slate-50 dark:bg-[#1c2e36] border-b border-gray-200 dark:border-[#233c48]">
-                                    <th className="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-20 text-center">Rango</th>
-                                    <th className="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Ciudadano Sabio</th>
+                                    <th className="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider w-20 text-center">{t('leaderboard.rank')}</th>
+                                    <th className="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider">{t('leaderboard.wiseCitizen')}</th>
                                     <th className="p-4 text-xs font-bold text-slate-500 uppercase tracking-wider text-right">Elo</th>
                                 </tr>
                             </thead>

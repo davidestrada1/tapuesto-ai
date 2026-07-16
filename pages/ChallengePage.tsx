@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from '../components/LanguageToggle';
 
 const ChallengePage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <div className="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col font-display selection:bg-primary/30">
             <header className="sticky top-0 z-50 w-full border-b border-surface-border bg-background-dark/80 backdrop-blur-md">
@@ -12,7 +15,8 @@ const ChallengePage = () => {
                         <h2 className="text-xl font-bold tracking-tight">tapuesto.ai</h2>
                     </div>
                     <div className="flex items-center gap-4">
-                        <Link to="/register" className="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold shadow-[0_0_15px_-3px_rgba(19,164,236,0.4)]">Conectar Billetera</Link>
+                        <LanguageToggle />
+                        <Link to="/register" className="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold shadow-[0_0_15px_-3px_rgba(19,164,236,0.4)]">{t('header.connectWallet')}</Link>
                     </div>
                 </div>
             </header>
@@ -23,10 +27,10 @@ const ChallengePage = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                         </span>
-                        Desafío Activo
+                        {t('challenge.active')}
                     </div>
-                    <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3">¡Te han desafiado!</h1>
-                    <p className="text-text-secondary text-lg max-w-xl">Tu oponente ha bloqueado sus fondos. Acepta la apuesta para igualar su monto y activar el contrato inteligente.</p>
+                    <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-3">{t('challenge.title')}</h1>
+                    <p className="text-text-secondary text-lg max-w-xl">{t('challenge.description')}</p>
                 </div>
                 <div className="w-full max-w-4xl bg-surface-dark border border-surface-border rounded-2xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden relative group/card">
                     <div className="relative bg-surface-dark rounded-2xl flex flex-col md:flex-row h-full">
@@ -42,20 +46,20 @@ const ChallengePage = () => {
                                         <div className="flex items-center gap-1">
                                             <span className="text-white text-sm font-bold">@CryptoInca</span>
                                         </div>
-                                        <span className="text-xs text-text-secondary">Desafiante</span>
+                                        <span className="text-xs text-text-secondary">{t('challenge.challenger')}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="w-full md:w-3/5 p-6 md:p-8 flex flex-col border-t md:border-t-0 md:border-l border-surface-border bg-gradient-to-b from-surface-dark to-[#15232b]">
                             <div className="mb-6">
-                                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">¿Bajará la inflación de Perú por debajo del 3% para diciembre de 2024?</h3>
+                                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight mb-2">{t('challenge.question')}</h3>
                             </div>
                             <div className="mt-auto space-y-4">
                                 <button onClick={() => navigate('/dashboard')} className="w-full group relative flex items-center justify-center overflow-hidden rounded-xl h-14 bg-primary text-white font-bold text-lg shadow-[0_0_20px_rgba(19,164,236,0.3)] hover:shadow-[0_0_30px_rgba(19,164,236,0.5)] hover:scale-[1.01] transition-all duration-300">
                                     <span className="flex items-center gap-2">
                                         <span className="material-symbols-outlined">lock_open</span>
-                                        Aceptar Desafío
+                                        {t('challenge.accept')}
                                     </span>
                                 </button>
                             </div>

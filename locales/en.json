@@ -1,0 +1,216 @@
+{
+  "header": {
+    "markets": "Markets",
+    "about": "About Us",
+    "leaderboard": "Leaderboard",
+    "architecture": "Architecture",
+    "connectWallet": "Connect Wallet",
+    "home": "Home"
+  },
+  "landing": {
+    "live": "Live in Peru",
+    "titlePrefix": "The Future of",
+    "titleHighlight": "Truth in Peru",
+    "description": "Tapuesto.ai is the leading prediction market in Peru. Join the collective intelligence to combat misinformation and earn rewards with accurate forecasts.",
+    "startPredicting": "Start Predicting",
+    "readWhitepaper": "Read Whitepaper",
+    "regulated": "Fully Regulated",
+    "secureAssets": "Secure Assets",
+    "stats": {
+      "volume": "Total Volume Traded",
+      "predictors": "Active Predictors",
+      "uptime": "Uptime",
+      "support": "Support"
+    },
+    "trending": {
+      "title": "Trending Markets",
+      "subtitle": "Discover what Peru is predicting right now.",
+      "viewAll": "View all markets"
+    },
+    "cta": {
+      "title": "Ready to see the future?",
+      "subtitle": "Join thousands of Peruvians who are predicting the news instead of just reading it.",
+      "connect": "Connect Wallet to Start",
+      "viewAll": "View All Markets"
+    },
+    "demoMarkets": {
+      "m1": {
+        "title": "Will Peru's GDP grow more than 3% in 2024?",
+        "tag": "Economy",
+        "expiry": "Dec 31"
+      },
+      "m2": {
+        "title": "Will the Minister of Economy resign before July?",
+        "tag": "Politics",
+        "expiry": "Jun 30"
+      },
+      "m3": {
+        "title": "Will Peru qualify for the 2026 World Cup?",
+        "tag": "Sports",
+        "expiry": "Nov 2025"
+      },
+      "card1": {
+        "tag": "Politics",
+        "title": "Winner of the Next Elections?"
+      },
+      "card2": {
+        "tag": "Economy",
+        "title": "Peru GDP Growth > 3.5% in 2024?"
+      }
+    }
+  },
+  "marketCard": {
+    "expires": "Expires:",
+    "vol": "Vol:",
+    "yes": "Yes",
+    "no": "No",
+    "buyYes": "Buy Yes",
+    "buyNo": "Buy No"
+  },
+  "dashboard": {
+    "panel": "Dashboard",
+    "leaders": "Leaders",
+    "balance": "Balance",
+    "welcome": "Welcome back, Alejandro.",
+    "totalBalance": "Total Balance",
+    "hitRate": "Hit Rate",
+    "myActiveBets": "My Active Bets",
+    "newPrediction": "+ New Prediction",
+    "market": "Market",
+    "result": "Result",
+    "wagered": "Wagered",
+    "gdpGrowth": "Q4 GDP Growth > 3%",
+    "winnerPeruBrazil": "Winner Peru vs Brazil",
+    "draw": "Draw",
+    "recentActivity": "Recent Activity",
+    "betResolved": "Bet Resolved:",
+    "missPeruEnded": "\"Miss Peru 2024\" ended.",
+    "profit": "Profit"
+  },
+  "profile": {
+    "profile": "Profile",
+    "memberSince": "Member since March 2024",
+    "createMarket": "Create Market",
+    "eloRating": "Elo Rating",
+    "totalEarnings": "Total Earnings",
+    "activeBets": "Active Bets",
+    "resolvedBets": "Resolved Bets",
+    "marketEvent": "Market Event",
+    "prediction": "Prediction",
+    "bet": "Bet",
+    "gdpGrowthQ3": "Will Peru's GDP grow >2% in Q3?"
+  },
+  "leaderboard": {
+    "titlePrefix": "Wise Citizens:",
+    "titleHighlight": "Top Predictors",
+    "description": "Measuring the collective intelligence of Peru. Climb the ranks by making accurate predictions.",
+    "silverTier": "Silver Tier",
+    "grandmaster": "Grandmaster",
+    "bronzeTier": "Bronze Tier",
+    "rank": "Rank",
+    "wiseCitizen": "Wise Citizen"
+  },
+  "register": {
+    "heroTitle": "Join the Collective Intelligence",
+    "heroDescription": "Predict outcomes, combat misinformation, and earn reputation in Peru's leading prediction market.",
+    "alreadyMember": "Already a member?",
+    "login": "Log in",
+    "createAccountTitle": "Create an account",
+    "createAccountDescription": "Enter your details to start predicting today.",
+    "nickname": "Nickname",
+    "nicknamePlaceholder": "unique_predictor",
+    "createAccountButton": "Create Account"
+  },
+  "createMarket": {
+    "title": "Create Bet",
+    "step1of2": "Step 1 of 2",
+    "step1Title": "1. Bet Type",
+    "duel": "Duel (1v1)",
+    "duelDesc": "You vs. Another person",
+    "group": "Group (Panda)",
+    "groupDesc": "Multiple participants",
+    "step2Title": "2. What are we betting?",
+    "money": "Money (Cash)",
+    "other": "In kind / Other",
+    "totalAmount": "Total Amount to Bet",
+    "downPayment": "Down Payment",
+    "required": "Required",
+    "downPaymentDesc": "Amount needed to enter the bet.",
+    "describeBet": "Describe the bet",
+    "describeBetPlaceholder": "E.g. A bottle of Blue Label, A dinner at Maido, Washing dishes for a week...",
+    "step3Title": "3. The Event",
+    "analyzing": "Analyzing...",
+    "improveAI": "Improve with AI",
+    "eventPlaceholder": "E.g. Who will lose the most weight for the summer?",
+    "aiSuggestion": "AI Suggestion:",
+    "step4Title": "4. Game Rules",
+    "deadline": "Deadline",
+    "deadlineDesc": "After this date, the option to upload evidence will be enabled.",
+    "proofQuestion": "How is the winner proven?",
+    "photo": "Photo",
+    "video": "Video",
+    "voucher": "Voucher",
+    "webLink": "Web Link",
+    "dataSource": "Data Source (Optional)",
+    "submit": "Create Market and Share",
+    "termsPrefix": "By creating, you accept our",
+    "terms": "Terms",
+    "and": "and",
+    "privacy": "Privacy Policy",
+    "errorMsg": "An error occurred while analyzing the topic. Please try again."
+  },
+  "challenge": {
+    "active": "Active Challenge",
+    "title": "You've been challenged!",
+    "description": "Your opponent has locked their funds. Accept the bet to match their amount and activate the smart contract.",
+    "challenger": "Challenger",
+    "question": "Will Peru's inflation drop below 3% by December 2024?",
+    "accept": "Accept Challenge"
+  },
+  "portfolio": {
+    "backToHome": "Back to Home",
+    "devPortfolio": "Developer Portfolio",
+    "heroTitle": "Building a Decentralized",
+    "heroHighlight": "Prediction Market",
+    "heroDesc": "Tapuesto.ai was built to combat misinformation by leveraging collective intelligence. This page showcases the system architecture, specifically highlighting the AI-driven market creation flow.",
+    "systemArch": "System Architecture",
+    "systemArchDesc": "High-level view of how the frontend, AI, and data layers interact.",
+    "reactClient": "React Client",
+    "geminiApi": "Gemini API",
+    "validationSearch": "Validation & Search Grounding",
+    "marketState": "Market State",
+    "appState": "App State / Smart Contracts",
+    "aiIntegration": "AI Integration: The Gemini Engine",
+    "aiIntegrationDesc": "How we use Google's Gemini Flash to validate prediction markets.",
+    "fastObjective": "Fast & Objective Resolution",
+    "fastObjectiveDesc": "Prediction markets require clear, unambiguous, binary questions (Yes/No). When users propose a topic, we ping the gemini-3-flash-preview model.",
+    "contextualAnalysis": "Contextual Analysis:",
+    "contextualAnalysisDesc": "Transforms vague ideas into strict YES/NO questions.",
+    "googleSearch": "Google Search Grounding:",
+    "googleSearchDesc": "Validates if the market is currently relevant and factual based on live web search data.",
+    "structuredOutput": "Structured Output:",
+    "structuredOutputDesc": "Returns a clean prediction and reasoning for the user to review.",
+    "userFlow": "User Flow: Creating a Market",
+    "step1Title": "1. Input Topic",
+    "step1Desc": "User types a rough idea for a market (e.g. \"Will inflation drop this year?\").",
+    "step2Title": "2. AI Enhancement",
+    "step2Desc": "Gemini reformats it into a clear, bettable metric backed by recent Google Search data.",
+    "step3Title": "3. User Approval",
+    "step3Desc": "User configures stake, deadlines, and required proof, accepting the AI's proposal.",
+    "step4Title": "4. Market Live",
+    "step4Desc": "The market is created and shareable to others to start taking bets!"
+  },
+  "privacy": {
+    "back": "Back",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: May 20, 2024",
+    "section1Title": "1. Information Collection",
+    "section1Desc": "At tapuesto.ai, we collect information necessary for the operation of the prediction market, including profile data (nickname, email) and transactional data related to your bets.",
+    "section2Title": "2. Use of Financial Data",
+    "section2Desc": "We do not directly store your credit card or bank account information. We use secure and regulated payment processors to manage transactions in Soles (PEN).",
+    "section3Title": "3. Sharing with Third Parties",
+    "section3Desc": "We do not sell your personal data. Public information about your predictions (betting history) is visible on the platform for reputation (Elo) calculation purposes.",
+    "section4Title": "4. Security",
+    "section4Desc": "We implement industry-standard security measures to protect your data. However, no internet transmission is 100% secure."
+  }
+}

@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from '../components/LanguageToggle';
 
 const ProfilePage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
             <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#233c48] bg-background-dark px-4 lg:px-10 py-3 shadow-md">
@@ -12,12 +15,13 @@ const ProfilePage = () => {
                         <h2 className="text-white text-xl font-extrabold">tapuesto.ai</h2>
                     </div>
                     <nav className="hidden lg:flex items-center gap-6">
-                        <Link to="/dashboard" className="text-text-secondary hover:text-white text-sm font-medium transition-colors">Mercados</Link>
-                        <Link to="/leaderboard" className="text-text-secondary hover:text-white text-sm font-medium transition-colors">Clasificación</Link>
-                        <span className="text-white text-sm font-bold border-b-2 border-primary pb-1">Perfil</span>
+                        <Link to="/dashboard" className="text-text-secondary hover:text-white text-sm font-medium transition-colors">{t('header.markets')}</Link>
+                        <Link to="/leaderboard" className="text-text-secondary hover:text-white text-sm font-medium transition-colors">{t('header.leaderboard')}</Link>
+                        <span className="text-white text-sm font-bold border-b-2 border-primary pb-1">{t('profile.profile')}</span>
                     </nav>
                 </div>
-                <div className="flex flex-1 justify-end gap-4 lg:gap-8">
+                <div className="flex flex-1 justify-end items-center gap-4 lg:gap-8">
+                    <LanguageToggle />
                     <button className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary/20" style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuA36yb8ognixKXinzTkP2ZlclGbFAtzRGwoVmYPu7TlASJ-g8j43cnE8H6pweJGy6RKs2joX3xX6GWhmaNGJbglaPr2TZ3gM5OwN0-_UI3MRXP2YrKCg87smjEOaiwFHSjFMrEQzjppLLrwdnv25Jyx6bEwnRhkMAc8VNbyXXJdVqvWA8-bQQFfuQDyavM0WVuwymAtJ1XgTiAMkL3tDdVQ-1jIZzfQZaczgpXSCulgVN99bqBphoxEGiO3SM8kdafnlVZxl8EWl_0")' }}></button>
                 </div>
             </header>
@@ -32,10 +36,10 @@ const ProfilePage = () => {
                             </div>
                             <div className="mt-4 flex flex-col gap-1">
                                 <h1 className="text-white text-2xl font-bold tracking-tight">Alejandro_PE</h1>
-                                <p className="text-text-secondary text-sm">Miembro desde Marzo 2024</p>
+                                <p className="text-text-secondary text-sm">{t('profile.memberSince')}</p>
                             </div>
                             <div className="mt-6 w-full flex flex-col gap-3">
-                                <button onClick={() => navigate('/create')} className="flex items-center justify-center w-full gap-2 bg-primary hover:bg-blue-500 text-white font-bold py-2.5 px-4 rounded-lg transition-all">Crear Mercado</button>
+                                <button onClick={() => navigate('/create')} className="flex items-center justify-center w-full gap-2 bg-primary hover:bg-blue-500 text-white font-bold py-2.5 px-4 rounded-lg transition-all">{t('profile.createMarket')}</button>
                             </div>
                         </div>
                     </aside>
@@ -45,7 +49,7 @@ const ProfilePage = () => {
                                 <div className="absolute right-0 top-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl -mr-8 -mt-8"></div>
                                 <div className="flex items-start justify-between">
                                     <div>
-                                        <p className="text-text-secondary font-medium text-sm">Calificación Elo</p>
+                                        <p className="text-text-secondary font-medium text-sm">{t('profile.eloRating')}</p>
                                         <div className="flex items-baseline gap-2 mt-1">
                                             <h3 className="text-3xl font-bold text-white">1450</h3>
                                             <span className="text-[#0bda57] text-sm font-semibold flex items-center bg-[#0bda57]/10 px-1.5 py-0.5 rounded">
@@ -59,7 +63,7 @@ const ProfilePage = () => {
                             <div className="bg-surface-dark border border-[#233c48] p-5 rounded-xl flex flex-col justify-between relative overflow-hidden">
                                 <div className="flex items-start justify-between">
                                     <div>
-                                        <p className="text-text-secondary font-medium text-sm">Tasa de Acierto</p>
+                                        <p className="text-text-secondary font-medium text-sm">{t('dashboard.hitRate')}</p>
                                         <div className="flex items-baseline gap-2 mt-1">
                                             <h3 className="text-3xl font-bold text-white">65%</h3>
                                         </div>
@@ -73,7 +77,7 @@ const ProfilePage = () => {
                             <div className="bg-surface-dark border border-[#233c48] p-5 rounded-xl flex flex-col justify-between relative overflow-hidden">
                                 <div className="flex items-start justify-between">
                                     <div>
-                                        <p className="text-text-secondary font-medium text-sm">Ganancias Totales</p>
+                                        <p className="text-text-secondary font-medium text-sm">{t('profile.totalEarnings')}</p>
                                         <div className="flex items-baseline gap-2 mt-1">
                                             <h3 className="text-3xl font-bold text-white">12,400</h3>
                                         </div>
@@ -84,22 +88,22 @@ const ProfilePage = () => {
                         </div>
                         <div className="bg-surface-dark border border-[#233c48] rounded-xl overflow-hidden flex flex-col">
                             <div className="flex border-b border-[#233c48] px-2 sm:px-6 overflow-x-auto no-scrollbar">
-                                <button className="px-4 py-4 text-sm font-bold text-primary border-b-2 border-primary whitespace-nowrap">Apuestas Activas</button>
-                                <button className="px-4 py-4 text-sm font-bold text-text-secondary hover:text-white border-b-2 border-transparent whitespace-nowrap">Apuestas Resueltas</button>
+                                <button className="px-4 py-4 text-sm font-bold text-primary border-b-2 border-primary whitespace-nowrap">{t('profile.activeBets')}</button>
+                                <button className="px-4 py-4 text-sm font-bold text-text-secondary hover:text-white border-b-2 border-transparent whitespace-nowrap">{t('profile.resolvedBets')}</button>
                             </div>
                             <div className="overflow-x-auto custom-scrollbar">
                                 <table className="w-full text-left border-collapse">
                                     <thead>
                                         <tr className="bg-[#1a2932] border-b border-[#233c48]">
-                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider w-[40%]">Evento de Mercado</th>
-                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider text-center">Predicción</th>
-                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider text-right">Apuesta</th>
+                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider w-[40%]">{t('profile.marketEvent')}</th>
+                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider text-center">{t('profile.prediction')}</th>
+                                            <th className="p-4 text-xs font-semibold text-text-secondary uppercase tracking-wider text-right">{t('profile.bet')}</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-[#233c48]">
                                         <tr className="hover:bg-[#1e2f39] transition-colors group cursor-pointer">
-                                            <td className="p-4"><p className="text-white font-medium text-sm">¿Crecerá el PBI de Perú &gt;2% en el Q3?</p></td>
-                                            <td className="p-4 text-center"><span className="inline-block px-2 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded uppercase border border-emerald-500/20">SÍ</span></td>
+                                            <td className="p-4"><p className="text-white font-medium text-sm">{t('profile.gdpGrowthQ3')}</p></td>
+                                            <td className="p-4 text-center"><span className="inline-block px-2 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded uppercase border border-emerald-500/20">{t('marketCard.yes')}</span></td>
                                             <td className="p-4 text-right text-text-secondary text-sm font-mono">500 pts</td>
                                         </tr>
                                     </tbody>

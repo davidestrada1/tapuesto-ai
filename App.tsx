@@ -12,6 +12,7 @@ import InviteLandingPage from './pages/InviteLandingPage';
 import SettleBetPage from './pages/SettleBetPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import PortfolioPage from './pages/PortfolioPage';
 
 const App = () => {
     return (
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/settle/:id" element={<SettleBetPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
+                <Route path="/portfolio" element={<PortfolioPage />} />
             </Routes>
         </HashRouter>
     );

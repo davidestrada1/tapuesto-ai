@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from '../components/LanguageToggle';
 
 const RegisterPage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
     return (
         <div className="flex min-h-screen w-full overflow-hidden">
             <div className="relative hidden lg:flex w-1/2 flex-col justify-between bg-background-dark overflow-hidden">
@@ -20,8 +23,8 @@ const RegisterPage = () => {
                 </div>
                 <div className="relative z-20 px-12 py-16">
                     <div className="max-w-xl space-y-6">
-                        <h1 className="text-5xl font-black leading-tight tracking-[-0.02em] text-white">Únete a la Inteligencia Colectiva</h1>
-                        <p className="text-lg text-slate-300 font-medium leading-relaxed">Predice resultados, combate la desinformación y gana reputación en el mercado de predicciones líder en Perú.</p>
+                        <h1 className="text-5xl font-black leading-tight tracking-[-0.02em] text-white">{t('register.heroTitle')}</h1>
+                        <p className="text-lg text-slate-300 font-medium leading-relaxed">{t('register.heroDescription')}</p>
                     </div>
                 </div>
             </div>
@@ -31,29 +34,30 @@ const RegisterPage = () => {
                         <div className="size-6 text-primary"><span className="material-symbols-outlined">analytics</span></div>
                         <span className="text-lg font-bold">tapuesto.ai</span>
                     </Link>
-                    <div className="flex w-full justify-end gap-2 text-sm font-medium">
-                        <span className="text-slate-500 dark:text-slate-400">¿Ya eres miembro?</span>
-                        <Link to="/dashboard" className="text-primary hover:text-primary/80 transition-colors">Iniciar sesión</Link>
+                    <div className="flex w-full justify-end gap-4 items-center text-sm font-medium">
+                        <LanguageToggle />
+                        <span className="text-slate-500 dark:text-slate-400">{t('register.alreadyMember')}</span>
+                        <Link to="/dashboard" className="text-primary hover:text-primary/80 transition-colors">{t('register.login')}</Link>
                     </div>
                 </div>
                 <div className="flex flex-1 flex-col justify-center px-6 py-4 lg:px-20 xl:px-32">
                     <div className="mx-auto w-full max-w-md space-y-8">
                         <div className="text-center lg:text-left">
-                            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">Crear una cuenta</h2>
-                            <p className="text-slate-500 dark:text-slate-400">Ingresa tus datos para empezar a predecir hoy.</p>
+                            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">{t('register.createAccountTitle')}</h2>
+                            <p className="text-slate-500 dark:text-slate-400">{t('register.createAccountDescription')}</p>
                         </div>
                         <form onSubmit={(e) => { e.preventDefault(); navigate('/profile'); }} className="space-y-5">
                             <div>
-                                <label className="block text-sm font-medium leading-6 text-slate-900 dark:text-white mb-2" htmlFor="nickname">Apodo</label>
+                                <label className="block text-sm font-medium leading-6 text-slate-900 dark:text-white mb-2" htmlFor="nickname">{t('register.nickname')}</label>
                                 <div className="relative rounded-lg shadow-sm">
-                                    <input className="block w-full rounded-lg border-0 py-3.5 pl-4 pr-10 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 dark:bg-input-dark-bg dark:text-white dark:ring-input-dark-border dark:focus:ring-primary" id="nickname" type="text" placeholder="predictor_unico" />
+                                    <input className="block w-full rounded-lg border-0 py-3.5 pl-4 pr-10 text-slate-900 ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 dark:bg-input-dark-bg dark:text-white dark:ring-input-dark-border dark:focus:ring-primary" id="nickname" type="text" placeholder={t('register.nicknamePlaceholder')} />
                                     <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
                                         <span className="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
                                     </div>
                                 </div>
                             </div>
                             <button className="flex w-full justify-center rounded-lg bg-primary px-4 py-3.5 text-sm font-bold leading-6 text-white shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all duration-200" type="submit">
-                                Crear Cuenta
+                                {t('register.createAccountButton')}
                             </button>
                         </form>
                     </div>

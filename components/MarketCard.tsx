@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Market } from '../types';
 
 interface MarketCardProps {
@@ -7,6 +8,8 @@ interface MarketCardProps {
 }
 
 const MarketCard: React.FC<MarketCardProps> = ({ market }) => {
+    const { t } = useTranslation();
+
     return (
         <div className="flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden hover:shadow-xl hover:border-primary/30 transition-all group">
             <div className="h-40 bg-cover bg-center relative" style={{ backgroundImage: `url("${market.img}")` }}>
@@ -20,22 +23,22 @@ const MarketCard: React.FC<MarketCardProps> = ({ market }) => {
                     {market.title}
                 </h3>
                 <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
-                    <span className="material-symbols-outlined text-[16px]">schedule</span> Vence: {market.expiry}
+                    <span className="material-symbols-outlined text-[16px]">schedule</span> {t('marketCard.expires')} {market.expiry}
                     <span className="mx-1">•</span>
-                    <span className="material-symbols-outlined text-[16px]">bar_chart</span> Vol: {market.volume}
+                    <span className="material-symbols-outlined text-[16px]">bar_chart</span> {t('marketCard.vol')} {market.volume}
                 </div>
                 <div className="mt-auto space-y-3">
                     <div className="flex justify-between text-sm font-medium">
-                        <span className="text-green-500">Sí {market.yes}%</span>
-                        <span className="text-red-500">No {market.no}%</span>
+                        <span className="text-green-500">{t('marketCard.yes')} {market.yes}%</span>
+                        <span className="text-red-500">{t('marketCard.no')} {market.no}%</span>
                     </div>
                     <div className="flex h-2 rounded-full overflow-hidden bg-slate-100 dark:bg-slate-800">
                         <div className="bg-green-500" style={{ width: `${market.yes}%` }}></div>
                         <div className="bg-red-500" style={{ width: `${market.no}%` }}></div>
                     </div>
                     <div className="grid grid-cols-2 gap-3 pt-2">
-                        <Link to="/challenge" className="flex items-center justify-center py-2 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 font-bold text-sm hover:bg-green-500/20 transition-colors">Comprar Sí</Link>
-                        <Link to="/challenge" className="flex items-center justify-center py-2 rounded-lg bg-red-500/10 text-red-600 dark:text-red-400 font-bold text-sm hover:bg-red-500/20 transition-colors">Comprar No</Link>
+                        <Link to="/challenge" className="flex items-center justify-center py-2 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400 font-bold text-sm hover:bg-green-500/20 transition-colors">{t('marketCard.buyYes')}</Link>
+                        <Link to="/challenge" className="flex items-center justify-center py-2 rounded-lg bg-red-500/10 text-red-600 dark:text-red-400 font-bold text-sm hover:bg-red-500/20 transition-colors">{t('marketCard.buyNo')}</Link>
                     </div>
                 </div>
             </div>
