@@ -38,14 +38,14 @@ It's a social prediction game where:
 ### The Build Journey
 
 ```
-┌──────────────┐     ┌──────────┐     ┌────────────────┐     ┌──────────┐     ┌─────────────┐
-│  Google AI   │ ──► │  Replit  │ ──► │   Google       │ ──► │  GitHub  │ ──► │  GitHub     │
-│  Studio      │     │ (rapid   │     │   Antigravity  │     │  (repo)  │     │  Pages      │
-│  (prototype) │     │  coding) │     │   IDE          │     │          │     │  (hosting)  │
-└──────────────┘     └──────────┘     └────────────────┘     └──────────┘     └─────────────┘
+┌──────────────┐     ┌──────────────┐     ┌──────────┐     ┌────────────────┐     ┌──────────┐     ┌─────────────┐
+│  Google      │ ──► │  Google AI   │ ──► │  Replit  │ ──► │   Google       │ ──► │  GitHub  │ ──► │  GitHub     │
+│  Stitch      │     │  Studio      │     │ (rapid   │     │   Antigravity  │     │  (repo)  │     │  Pages      │
+│  (UI design) │     │  (prototype) │     │  coding) │     │   IDE          │     │          │     │  (hosting)  │
+└──────────────┘     └──────────────┘     └──────────┘     └────────────────┘     └──────────┘     └─────────────┘
 ```
 
-**The prototype was built in Google AI Studio**, iterated rapidly in **Replit**, refined locally in **Google Antigravity IDE**, version-controlled on **GitHub**, and deployed on **GitHub Pages** for zero-cost hosting.
+**The UI was designed in Google Stitch**, prototyped in **Google AI Studio**, iterated rapidly in **Replit**, refined locally in **Google Antigravity IDE**, version-controlled on **GitHub**, and deployed on **GitHub Pages** for zero-cost hosting.
 
 ### Live Demo
 
@@ -256,7 +256,7 @@ MIT
 
 | Tool | How It Was Used |
 |------|----------------|
-| **Google AI Studio** | Initial prototyping & AI prompt engineering |
+| **Google Stitch** | UI design prototyping from text/sketch descriptions |
 | **Replit** | Rapid online iteration of the React app |
 | **Google Antigravity IDE** | Local development & refinement |
 | **GitHub** | Version control & collaboration |

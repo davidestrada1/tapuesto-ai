@@ -136,18 +136,18 @@ People love:
 ## Build Pipeline
 
 ```
-┌──────────────┐     ┌──────────┐     ┌────────────────┐     ┌──────────┐     ┌─────────────┐
-│  Google AI   │ ──► │  Replit  │ ──► │   Google       │ ──► │  GitHub  │ ──► │  GitHub     │
-│  Studio      │     │ (rapid   │     │   Antigravity  │     │  (repo)  │     │  Pages      │
-│  (prototype) │     │  coding) │     │   IDE          │     │          │     │  (hosting)  │
-└──────────────┘     └──────────┘     └────────────────┘     └──────────┘     └─────────────┘
-                                                                  │
-                                                         ┌────────▼────────┐
-                                                         │  Supabase       │
-                                                         │  (planned —     │
-                                                         │   auth, DB,     │
-                                                         │   storage)      │
-                                                         └─────────────────┘
+┌──────────────┐     ┌──────────────┐     ┌──────────┐     ┌────────────────┐     ┌──────────┐     ┌─────────────┐
+│  Google      │ ──► │  Google AI   │ ──► │  Replit  │ ──► │   Google       │ ──► │  GitHub  │ ──► │  GitHub     │
+│  Stitch      │     │  Studio      │     │ (rapid   │     │   Antigravity  │     │  (repo)  │     │  Pages      │
+│  (UI design) │     │  (prototype) │     │  coding) │     │   IDE          │     │          │     │  (hosting)  │
+└──────────────┘     └──────────────┘     └──────────┘     └────────────────┘     └──────────┘     └─────────────┘
+                                                                                      │
+                                                                             ┌────────▼────────┐
+                                                                             │  Supabase       │
+                                                                             │  (planned —     │
+                                                                             │   auth, DB,     │
+                                                                             │   storage)      │
+                                                                             └─────────────────┘
 ```
 
 ---
