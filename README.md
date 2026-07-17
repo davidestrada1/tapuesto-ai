@@ -274,4 +274,4 @@ MIT
 - **GitHub Repo:** https://github.com/davidestrada1/tapuesto-ai
 - **Slides (Markdown):** `slides/slides.md`
 - **Slides (Interactive):** https://davidestrada1.github.io/tapuesto-ai/slides/index.html (open in browser or deploy)
-- **[Animated Architecture Diagram](https://davidestrada1.github.io/tapuesto-ai/architecture.html)** to see how the React client, Gemini API, and Reputation system interact in real-time.
+- **[Animated Architecture Diagram](https://davidestrada1.github.io/tapuesto-ai/architecture_1page.html)** to see how the React client, Gemini API, and Reputation system interact in real-time.
