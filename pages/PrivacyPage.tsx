@@ -7,7 +7,6 @@ const PrivacyPage = () => {
     const navigate = useNavigate();
     const { t } = useTranslation();
     return (
-    return (
         <div className="bg-background-light dark:bg-background-dark min-h-screen p-8 md:p-12 font-display text-slate-900 dark:text-white">
             <div className="flex justify-between items-center mb-8">
                 <button onClick={() => navigate(-1)} className="flex items-center gap-2 text-primary font-bold">
