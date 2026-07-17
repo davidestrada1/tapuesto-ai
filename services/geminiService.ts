@@ -1,17 +1,12 @@
-import { GoogleGenAI } from "@google/genai";
 import { AIAnalysisResult, GroundingSource } from "../types";
 
-let ai: GoogleGenAI | null = null;
-
-const getClient = () => {
-    if (!ai) {
-        const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
-        if (!apiKey) {
-            throw new Error("Gemini API key not configured. Set GEMINI_API_KEY in .env.local");
-        }
-        ai = new GoogleGenAI({ apiKey });
+const getClient = async () => {
+    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+        throw new Error("Gemini API key not configured. Set GEMINI_API_KEY in .env.local");
     }
-    return ai;
+    const { GoogleGenAI } = await import("@google/genai");
+    return new GoogleGenAI({ apiKey });
 };
 
 export const analyzeMarketTopic = async (topic: string): Promise<AIAnalysisResult> => {
@@ -20,7 +15,7 @@ export const analyzeMarketTopic = async (topic: string): Promise<AIAnalysisResul
     }
 
     try {
-        const client = getClient();
+        const client = await getClient();
         const response = await client.models.generateContent({
             model: "gemini-3-flash-preview",
             contents: `Analiza el siguiente tema para un mercado de predicciones en Perú: "${topic}".
