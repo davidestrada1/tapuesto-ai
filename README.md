@@ -47,11 +47,12 @@ It's a social prediction game where:
 
 **The UI was designed in Google Stitch**, prototyped in **Google AI Studio**, iterated rapidly in **Replit**, refined locally in **Google Antigravity IDE**, version-controlled on **GitHub**, and deployed on **GitHub Pages** for zero-cost hosting.
 
-### Live Demo
+### Live Demo (see the working app)
+
+👉 **https://davidestrada1.github.io/tapuesto-ai/** — This is the full React app with language toggle, all pages, and all features. Use this link for recruiters.
 
 - **GitHub Repo:** https://github.com/davidestrada1/tapuesto-ai
-- **AI Studio Prototype:** https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r
-- **GitHub Pages (live):** https://davidestrada1.github.io/tapuesto-ai/
+- **AI Studio Prototype (early concept):** https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r
 
 ---
 
@@ -268,8 +269,12 @@ MIT
 
 ## 🔗 Links
 
-- **GitHub:** https://github.com/davidestrada1/tapuesto-ai
-- **AI Studio Prototype:** https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r
-- **Live Demo:** https://davidestrada1.github.io/tapuesto-ai/
+- **Live Demo (full app — use this):** https://davidestrada1.github.io/tapuesto-ai/
+  - Includes language toggle (ES/EN), full UI, all features
+- **GitHub Repo:** https://github.com/davidestrada1/tapuesto-ai
+- **AI Studio Prototype (initial):** https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r
+  - Early prototype — used for initial concept & AI prompt engineering
+- **AI Studio Published:** https://tapuesto-ai.ai.studio
+  - Published version from AI Studio (limited vs full React app)
 - **Slides (Markdown):** `slides/slides.md`
 - **Slides (Interactive):** `slides/index.html` (open in browser or deploy)
