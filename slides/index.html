@@ -61,14 +61,54 @@
         .flow-step.success { border-color: rgba(48,209,88,0.4); background: rgba(48,209,88,0.08); }
         .flow-arrow { color: var(--primary); font-size: 0.65em; opacity: 0.6; line-height: 0.4; }
 
-        .arch { display: flex; flex-direction: column; gap: 3px; margin-top: 4px; }
-        .arch-layer { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; height: 34px; display: flex; align-items: center; gap: 10px; }
-        .arch-layer .icon-box { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; flex-shrink: 0; margin-left: 4px; }
-        .arch-layer .info { flex: 1; min-width: 0; }
-        .arch-layer .info .title { color: var(--text); font-weight: 600; font-size: 0.48em; display: inline; }
-        .arch-layer .info .title::after { content: " — "; color: var(--text-secondary); font-weight: 400; }
-        .arch-layer .info .desc { color: var(--text-secondary); font-size: 0.38em; display: inline; line-height: 1; }
-        .arch-arrow { text-align: center; color: var(--text-secondary); font-size: 0.4em; opacity: 0.4; line-height: 0.3; }
+        /* --- UPDATED SLIDE 07: ARCHITECTURE --- */
+        .arch { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+        .arch-layer { 
+            background: var(--surface); 
+            border: 1px solid var(--border); 
+            border-radius: 8px; 
+            padding: 14px 16px; 
+            display: flex; 
+            align-items: center; 
+            gap: 16px; 
+        }
+        .arch-layer .icon-box { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 8px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.6em; 
+            flex-shrink: 0; 
+        }
+        .arch-layer .info { 
+            flex: 1; 
+            min-width: 0; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 4px; 
+        }
+        .arch-layer .info .title { 
+            color: var(--text); 
+            font-weight: 700; 
+            font-size: 0.65em; 
+            display: block; 
+        }
+        .arch-layer .info .title::after { display: none; } 
+        .arch-layer .info .desc { 
+            color: var(--text-secondary); 
+            font-size: 0.55em; 
+            display: block; 
+            line-height: 1.3; 
+        }
+        .arch-arrow { 
+            text-align: center; 
+            color: var(--primary); 
+            font-size: 0.8em; 
+            opacity: 0.6; 
+            margin: 2px 0;
+        }
 
         .badge { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 0.45em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .badge-blue { background: rgba(10,132,255,0.15); color: var(--primary); }
@@ -86,12 +126,43 @@
         .stat-card .stat-icon { font-size: 1.2em; margin-bottom: 2px; }
         .stat-card .label { font-size: 0.48em; color: var(--text-secondary); margin-top: 1px; }
 
-        .pipeline { display: flex; gap: 3px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
-        .pipeline-item { text-align: center; padding: 4px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; min-width: 60px; flex: 1; max-width: 80px; }
-        .pipeline-item .p-icon { font-size: 0.8em; }
-        .pipeline-item .p-name { font-weight: 600; font-size: 0.45em; color: var(--text); margin-top: 1px; line-height: 1.2; }
-        .pipeline-item .p-desc { font-size: 0.4em; color: var(--text-secondary); }
-        .pipeline-arrow { color: var(--primary); font-size: 0.7em; opacity: 0.5; flex-shrink: 0; }
+        /* --- UPDATED SLIDE 09: BUILD PIPELINE --- */
+        .pipeline-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 16px; 
+            margin-top: 16px; 
+        }
+        .pipeline-card { 
+            background: var(--surface); 
+            border: 1px solid var(--border); 
+            border-radius: 8px; 
+            padding: 14px 10px; 
+            text-align: center; 
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pipeline-card .p-step {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 0.45em;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pipeline-card .p-icon { font-size: 1.8em; margin-bottom: 6px; }
+        .pipeline-card .p-name { font-weight: 700; font-size: 0.55em; color: var(--text); line-height: 1.2; margin-bottom: 2px; }
+        .pipeline-card .p-desc { font-size: 0.45em; color: var(--text-secondary); line-height: 1.3; }
 
         .roadmap-item { display: flex; align-items: center; gap: 7px; padding: 4px 10px; border-radius: 4px; margin-bottom: 2px; }
         .roadmap-item.done { background: rgba(48,209,88,0.08); border-left: 2px solid var(--success); }
@@ -206,7 +277,7 @@
         <div class="card card-accent"><div class="icon">🎯</div><h4>Create Bets</h4><p>1v1 duels or group polls on any topic</p></div>
         <div class="card card-accent"><div class="icon">🤖</div><h4>AI Assistant</h4><p>Gemini helps turn ideas into clear bets</p></div>
         <div class="card card-accent"><div class="icon">⭐</div><h4>ELO Rating</h4><p>Like chess — climb the ranks</p></div>
-        <div class="card card-accent"><div class="icon">📈</div><h4>Credit Score</h4><p>Show you're a reliable bettor</p></div>
+        <div class="card card-accent"><div class="icon">📈</div><h4>Credit Score</h4><p>Show you're a reliable bettor (if you lose, you pay on time)</p></div>
         <div class="card card-accent"><div class="icon">🏆</div><h4>Leaderboard</h4><p>Compare vs. friends &amp; strangers</p></div>
         <div class="card card-accent"><div class="icon">🌐</div><h4>Bilingual</h4><p>English &amp; Spanish from day one</p></div>
     </div>
@@ -292,24 +363,36 @@
         <h2><span class="accent">07</span> Technical Architecture</h2>
     </div>
     <div class="arch">
-        <div class="arch-layer" style="border-color: rgba(10,132,255,0.3); background: rgba(10,132,255,0.06);">
+        <div class="arch-layer" style="border-color: rgba(10,132,255,0.4); background: rgba(10,132,255,0.05);">
             <div class="icon-box" style="background: rgba(10,132,255,0.15);">🌐</div>
-            <div class="info"><div class="title">React Client</div><div class="desc">Vite + TypeScript — Landing, Dashboard, Create Market, Leaderboard, Profile</div></div>
+            <div class="info">
+                <span class="title">React Client</span>
+                <span class="desc">Vite + TypeScript — Landing, Dashboard, Create Market, Leaderboard, Profile</span>
+            </div>
         </div>
-        <div class="arch-arrow">⇄</div>
-        <div class="arch-layer" style="border-color: rgba(48,209,88,0.3); background: rgba(48,209,88,0.06);">
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer" style="border-color: rgba(48,209,88,0.4); background: rgba(48,209,88,0.05);">
             <div class="icon-box" style="background: rgba(48,209,88,0.15);">🤖</div>
-            <div class="info"><div class="title">Gemini API</div><div class="desc">gemini-3-flash-preview + Google Search Grounding for real-time validation</div></div>
+            <div class="info">
+                <span class="title">Gemini API</span>
+                <span class="desc">gemini-3-flash-preview + Google Search Grounding for real-time validation</span>
+            </div>
         </div>
-        <div class="arch-arrow">⇄</div>
-        <div class="arch-layer" style="border-color: rgba(255,214,10,0.3); background: rgba(255,214,10,0.06);">
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer" style="border-color: rgba(255,214,10,0.4); background: rgba(255,214,10,0.05);">
             <div class="icon-box" style="background: rgba(255,214,10,0.15);">🗄️</div>
-            <div class="info"><div class="title">Supabase (Planned)</div><div class="desc">Auth, PostgreSQL, Storage — ready for integration</div></div>
+            <div class="info">
+                <span class="title">Supabase (Planned)</span>
+                <span class="desc">Auth, PostgreSQL, Storage — ready for integration</span>
+            </div>
         </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-layer" style="border-color: rgba(152,152,157,0.2);">
-            <div class="icon-box" style="background: rgba(152,152,157,0.1);">🧠</div>
-            <div class="info"><div class="title">In-Memory State (Current)</div><div class="desc">Wallet simulation, no backend persistence yet</div></div>
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer" style="border-color: rgba(152,152,157,0.3); background: rgba(152,152,157,0.05);">
+            <div class="icon-box" style="background: rgba(152,152,157,0.15);">🧠</div>
+            <div class="info">
+                <span class="title">In-Memory State (Current)</span>
+                <span class="desc">Wallet simulation, no backend persistence yet</span>
+            </div>
         </div>
     </div>
 </section>
@@ -350,21 +433,48 @@
         <span class="label">Development Journey</span>
         <h2><span class="accent">09</span> Build Pipeline</h2>
     </div>
-    <div class="pipeline">
-        <div class="pipeline-item"><div class="p-icon">🎨</div><div class="p-name">Google Stitch</div><div class="p-desc">UI design from sketches</div></div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-item"><div class="p-icon">✏️</div><div class="p-name">Google AI Studio</div><div class="p-desc">Prototyping</div></div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-item"><div class="p-icon">🔄</div><div class="p-name">Replit</div><div class="p-desc">Rapid iteration</div></div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-item"><div class="p-icon">💻</div><div class="p-name">Antigravity</div><div class="p-desc">Local refinement</div></div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-item"><div class="p-icon">🐙</div><div class="p-name">GitHub</div><div class="p-desc">Version control</div></div>
-        <div class="pipeline-arrow">→</div>
-        <div class="pipeline-item" style="border-color: rgba(48,209,88,0.3);"><div class="p-icon">🚀</div><div class="p-name">GitHub Pages</div><div class="p-desc">Free hosting</div></div>
+    
+    <div class="pipeline-grid">
+        <div class="pipeline-card">
+            <div class="p-step">1</div>
+            <div class="p-icon">🎨</div>
+            <div class="p-name">Google Stitch</div>
+            <div class="p-desc">UI design from sketches</div>
+        </div>
+        <div class="pipeline-card">
+            <div class="p-step">2</div>
+            <div class="p-icon">✏️</div>
+            <div class="p-name">Google AI Studio</div>
+            <div class="p-desc">Prototyping</div>
+        </div>
+        <div class="pipeline-card">
+            <div class="p-step">3</div>
+            <div class="p-icon">🔄</div>
+            <div class="p-name">Replit</div>
+            <div class="p-desc">Rapid iteration</div>
+        </div>
+        <div class="pipeline-card">
+            <div class="p-step">4</div>
+            <div class="p-icon">💻</div>
+            <div class="p-name">Antigravity</div>
+            <div class="p-desc">Local refinement</div>
+        </div>
+        <div class="pipeline-card">
+            <div class="p-step">5</div>
+            <div class="p-icon">🐙</div>
+            <div class="p-name">GitHub</div>
+            <div class="p-desc">Version control</div>
+        </div>
+        <div class="pipeline-card" style="border-color: rgba(48,209,88,0.4); background: rgba(48,209,88,0.05);">
+            <div class="p-step" style="background: var(--success); color: #000;">6</div>
+            <div class="p-icon">🚀</div>
+            <div class="p-name">GitHub Pages</div>
+            <div class="p-desc">Free hosting</div>
+        </div>
     </div>
-    <div class="quote-box" style="border-left-color: var(--warning); text-align: center;">
-        <p style="margin: 0;"><strong>🗄️ Backend (Planned):</strong> Supabase — Auth, PostgreSQL, Storage</p>
+    
+    <div class="quote-box" style="border-left-color: var(--warning); text-align: center; margin-top: 16px;">
+        <p style="margin: 0; font-size: 0.65em;"><strong>🗄️ Backend (Planned):</strong> Supabase — Auth, PostgreSQL, Storage</p>
     </div>
 </section>
 
