@@ -136,6 +136,25 @@
         /* Slide 9 — compact architecture */
         .reveal .slides > section:nth-child(8) h2 { margin-bottom: 0.2em; }
         .reveal .slides > section:nth-child(8) .slide-header { margin-bottom: 6px; }
+
+        /* Slide 7 — reputation dashboard */
+        .reveal .slides > section:nth-child(6) .stat-row {
+            display: flex; flex-direction: column; gap: 5px; margin-top: 6px;
+        }
+        .reveal .slides > section:nth-child(6) .stat-card {
+            display: flex; align-items: center; gap: 12px; padding: 8px 14px; text-align: left;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+        }
+        .reveal .slides > section:nth-child(6) .stat-card .stat-icon {
+            font-size: 1.6em; margin-bottom: 0; flex-shrink: 0; width: 32px; text-align: center;
+        }
+        .reveal .slides > section:nth-child(6) .stat-card .number {
+            font-size: 0.75em; font-weight: 700; min-width: 72px; flex-shrink: 0; color: var(--text);
+        }
+        .reveal .slides > section:nth-child(6) .stat-card .label {
+            font-size: 0.5em; margin-top: 0; color: var(--text-secondary); flex: 1;
+        }
+        .reveal .slides > section:nth-child(6) .slide-header { margin-bottom: 6px; }
     </style>
 </head>
 <body>
