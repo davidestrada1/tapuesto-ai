@@ -4,7 +4,7 @@
 
 ---
 
-## 🧭 For Non-Technical Readers (HR / Recruiters / Stakeholders)
+## 🧭 For Business Readers
 
 ### What Is This? (The Story)
 
