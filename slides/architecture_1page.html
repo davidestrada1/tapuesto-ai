@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tapuesto.ai — System Architecture</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
 
         body {
             margin: 0;
@@ -24,41 +24,35 @@
 
         .diagram-container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1250px;
             background: #161b22;
             border: 1px solid #30363d;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             padding: 50px;
             position: relative;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .header h1 {
             color: #58a6ff;
-            font-size: 2.2em;
-            margin: 0 0 12px 0;
-            letter-spacing: -0.03em;
+            font-size: 2.5em;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.04em;
+            font-weight: 900;
         }
 
-        .header p.subtitle {
-            color: #8b949e;
-            font-size: 1.1em;
-            margin: 0 0 8px 0;
-            font-weight: 600;
-        }
-        
         .header p.description {
             color: #8b949e;
-            font-size: 0.9em;
+            font-size: 1.05em;
             margin: 0 auto;
-            max-width: 700px;
-            line-height: 1.5;
-            opacity: 0.8;
+            max-width: 850px;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         svg {
@@ -67,49 +61,53 @@
             display: block;
         }
 
-        /* --- Animations (Slowed down by 30%) --- */
+        /* --- Animations --- */
         @keyframes dash {
-            to { stroke-dashoffset: -24; }
+            to { stroke-dashoffset: -30; }
         }
 
         @keyframes pulseGlow {
-            0% { filter: drop-shadow(0 0 5px rgba(88, 166, 255, 0.2)); }
-            50% { filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.5)); }
-            100% { filter: drop-shadow(0 0 5px rgba(88, 166, 255, 0.2)); }
+            0% { filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.2)); }
+            50% { filter: drop-shadow(0 0 20px rgba(88, 166, 255, 0.6)); }
+            100% { filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.2)); }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- Node Styles --- */
-        .node-bg { fill: #21262d; stroke: #30363d; stroke-width: 2; rx: 10; }
-        .node-bg.primary { stroke: #58a6ff; animation: pulseGlow 5s infinite; }
+        .node-bg { fill: #1c2128; stroke: #30363d; stroke-width: 2.5; rx: 12; }
+        .node-bg.primary { stroke: #58a6ff; animation: pulseGlow 4s infinite; }
         .node-bg.ai { stroke: #3fb950; }
         .node-bg.db { stroke: #d2a8ff; }
         
-        .node-title { fill: #f0f6fc; font-weight: 800; font-size: 16px; }
-        .node-desc { fill: #8b949e; font-size: 12.5px; }
-        .phase-title { fill: #a5d6ff; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; }
-        .badge-text { fill: #ffffff; font-size: 11px; font-weight: 600; }
-        .flow-text { fill: #8b949e; font-size: 11px; font-style: italic; font-weight: 600; }
+        .node-title { fill: #f0f6fc; font-weight: 800; font-size: 18px; }
+        .node-desc { fill: #8b949e; font-size: 13px; line-height: 1.4; }
+        
+        .phase-badge { fill: #1f2428; stroke: #30363d; stroke-width: 1.5; rx: 6; }
+        .phase-text { fill: #ffffff; font-weight: 800; font-size: 13px; letter-spacing: 0.5px; }
+        .phase-subtext { fill: #8b949e; font-size: 12px; font-weight: 600; font-style: italic; }
+
+        .list-box { fill: #2d2238; rx: 6; }
+        .list-text { fill: #e6cfff; font-size: 12.5px; font-weight: 600; }
 
         /* --- Flow Lines --- */
         .packet-stream {
             fill: none;
-            stroke-width: 3;
-            stroke-dasharray: 8 16;
-            animation: dash 1.5s linear infinite; /* Increased duration for slower animation */
+            stroke-width: 3.5;
+            stroke-dasharray: 10 20;
+            animation: dash 1.8s linear infinite; 
         }
 
         .stream-blue { stroke: #58a6ff; }
         .stream-green { stroke: #3fb950; }
         .stream-purple { stroke: #d2a8ff; }
         
-        .static-line { stroke: #30363d; stroke-width: 2; fill: none; }
+        .static-line { stroke: #30363d; stroke-width: 2.5; fill: none; }
 
-        /* Sequential Reveal (Delays extended by 30%) */
+        /* Sequential Reveal */
         .step-1 { animation: fadeIn 0.8s ease forwards; opacity: 0; animation-delay: 0.3s; }
         .step-2 { animation: fadeIn 0.8s ease forwards; opacity: 0; animation-delay: 1.5s; }
         .step-3 { animation: fadeIn 0.8s ease forwards; opacity: 0; animation-delay: 2.8s; }
@@ -121,13 +119,38 @@
 
 <div class="diagram-container">
     <div class="header">
-        <h1>tapuesto.ai | System Architecture</h1>
-        <p class="subtitle">The Prediction Market for People</p>
-        <p class="description">From initial wagers to verified internet outcomes. A comprehensive loop that records bets, checks the web for winners, tracks if losers pay, and builds a gamified reputation leaderboard.</p>
+        <h1>tapuesto.ai | End-to-End System Architecture</h1>
+        <p class="description">
+            <strong>The Flow:</strong> A user places a bet, our AI checks the internet to see who wins, we reward the winner and record the resolution. Finally, the system tracks if the loser paid, updates the scores and leaderboard, and allows users to compare their reputation with peers.
+        </p>
     </div>
 
-    <svg viewBox="0 0 1100 750" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
         <defs>
+            <!-- Vector Icons -->
+            <g id="icon-user" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </g>
+            <g id="icon-react" fill="currentColor" stroke="currentColor">
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke-width="1.5" transform="rotate(30 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke-width="1.5" transform="rotate(90 12 12)"/>
+                <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke-width="1.5" transform="rotate(150 12 12)"/>
+            </g>
+            <g id="icon-search" fill="none" stroke="currentColor">
+                <circle cx="10" cy="10" r="6" stroke-width="2"/>
+                <line x1="14" y1="14" x2="20" y2="20" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g id="icon-gemini" fill="currentColor">
+                <path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/>
+            </g>
+            <g id="icon-db" fill="none" stroke="currentColor">
+                <ellipse cx="12" cy="6" rx="9" ry="3.5" stroke-width="2"/>
+                <path d="M3 6v6c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5V6" stroke-width="2"/>
+                <path d="M3 12v6c0 1.93 4.03 3.5 9 3.5s9-1.57 9-3.5v-6" stroke-width="2"/>
+            </g>
+
+            <!-- Arrows -->
             <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,0 L10,5 L0,10 z" fill="#58a6ff" />
             </marker>
@@ -140,100 +163,105 @@
         </defs>
 
         <!-- STATIC BACKGROUND WIRES -->
-        <path d="M 220 320 L 290 320 L 290 340 L 360 340" class="static-line" />
-        <path d="M 220 440 L 290 440 L 290 400 L 360 400" class="static-line" />
-        <path d="M 620 320 L 700 320 L 700 240 L 780 240" class="static-line" />
-        <path d="M 880 160 L 880 100 L 750 100" class="static-line" />
-        <path d="M 620 420 L 700 420 L 700 540 L 780 540" class="static-line" />
+        <path d="M 220 340 L 350 340" class="static-line" />
+        <path d="M 220 480 L 285 480 L 285 400 L 350 400" class="static-line" />
+        <path d="M 640 370 L 730 370 L 730 270 L 820 270" class="static-line" />
+        <path d="M 750 110 L 880 110 L 880 180" class="static-line" />
+        <path d="M 640 450 L 730 450 L 730 550 L 820 550" class="static-line" />
 
         <!-- STEP 1: The Users -->
         <g class="step-1">
-            <text x="40" y="260" class="phase-title">Phase 1: Bet Placed</text>
-            
             <!-- User 1 -->
-            <rect x="40" y="280" width="180" height="80" class="node-bg" />
-            <text x="60" y="305" class="node-title">👤 Player 1</text>
-            <text x="60" y="325" class="node-desc">Proposes the wager</text>
-            <text x="60" y="345" class="node-desc">Sets deadline & stakes</text>
+            <rect x="40" y="300" width="180" height="80" class="node-bg" />
+            <use href="#icon-user" x="55" y="315" width="24" height="24" color="#58a6ff" />
+            <text x="90" y="332" class="node-title">Player 1</text>
+            <text x="55" y="360" class="node-desc">Proposes the wager</text>
             
             <!-- User 2 -->
-            <rect x="40" y="400" width="180" height="80" class="node-bg" />
-            <text x="60" y="425" class="node-title">👥 Player 2</text>
-            <text x="60" y="445" class="node-desc">Accepts the challenge</text>
-            <text x="60" y="465" class="node-desc">Locks in the bet</text>
+            <rect x="40" y="440" width="180" height="80" class="node-bg" />
+            <use href="#icon-user" x="55" y="455" width="24" height="24" color="#58a6ff" />
+            <text x="90" y="472" class="node-title">Player 2</text>
+            <text x="55" y="500" class="node-desc">Accepts the challenge</text>
 
             <!-- Animated Flow -->
-            <path d="M 220 320 L 290 320 L 290 340 L 360 340" class="packet-stream stream-blue" marker-end="url(#arrow-blue)" />
-            <path d="M 220 440 L 290 440 L 290 400 L 360 400" class="packet-stream stream-blue" marker-end="url(#arrow-blue)" />
-            <text x="240" y="312" class="flow-text">Submit Market</text>
-            <text x="240" y="470" class="flow-text">Join Market</text>
+            <path d="M 220 340 L 350 340" class="packet-stream stream-blue" marker-end="url(#arrow-blue)" />
+            <path d="M 220 480 L 285 480 L 285 400 L 350 400" class="packet-stream stream-blue" marker-end="url(#arrow-blue)" />
         </g>
 
-        <!-- STEP 2: The React Client -->
+        <!-- STEP 2: The React Client & Bet Placement -->
         <g class="step-2">
-            <rect x="360" y="270" width="260" height="200" class="node-bg primary" />
-            <text x="380" y="310" class="node-title">⚛️ React Client</text>
-            <text x="380" y="330" class="node-desc">Vite + TypeScript UI</text>
-            <text x="380" y="350" class="node-desc">Manages the active duel interface</text>
+            <!-- Phase Tag -->
+            <rect x="350" y="240" width="140" height="26" class="phase-badge" />
+            <text x="365" y="258" class="phase-text" fill="#58a6ff">1. BET PLACED</text>
+
+            <rect x="350" y="280" width="290" height="200" class="node-bg primary" />
+            <use href="#icon-react" x="370" y="300" width="28" height="28" color="#58a6ff" />
+            <text x="410" y="320" class="node-title">React Client (UI)</text>
             
-            <!-- Business Logic Badges -->
-            <rect x="380" y="375" width="220" height="26" rx="4" fill="#1f2428" stroke="#58a6ff" />
-            <text x="395" y="392" class="badge-text" fill="#58a6ff">Market Creation & Lobby</text>
+            <text x="370" y="355" class="node-desc">Players define the terms, stakes,</text>
+            <text x="370" y="375" class="node-desc">and deadline in the web app.</text>
             
-            <rect x="380" y="415" width="220" height="26" rx="4" fill="#1f2428" stroke="#58a6ff" />
-            <text x="395" y="432" class="badge-text" fill="#58a6ff">Proof Settlement Interface</text>
+            <rect x="370" y="400" width="250" height="26" rx="4" fill="#1f2428" stroke="#58a6ff" />
+            <text x="385" y="418" class="phase-text" fill="#58a6ff" style="font-size: 11px;">Lock in Stakes & Verify Intent</text>
+            <rect x="370" y="435" width="250" height="26" rx="4" fill="#1f2428" stroke="#58a6ff" />
+            <text x="385" y="453" class="phase-text" fill="#58a6ff" style="font-size: 11px;">Generate Shareable Duel Link</text>
         </g>
 
         <!-- STEP 3: Gemini Validation & Web Search -->
         <g class="step-3">
-            <text x="780" y="140" class="phase-title">Phase 2: Evaluate Web</text>
-            
-            <!-- Gemini Box -->
-            <rect x="780" y="160" width="280" height="150" class="node-bg ai" />
-            <text x="800" y="195" class="node-title">🤖 Gemini API</text>
-            <text x="800" y="215" class="node-desc">gemini-3-flash-preview</text>
-            <text x="800" y="240" class="node-desc">Transforms vague user ideas</text>
-            <text x="800" y="260" class="node-desc">into strict YES/NO binaries.</text>
-            <text x="800" y="280" class="node-desc">Evaluates outcomes at deadline.</text>
+            <!-- Phase Tag -->
+            <rect x="820" y="140" width="310" height="26" class="phase-badge" />
+            <text x="835" y="158" class="phase-text" fill="#3fb950">2. CHECK INTERNET TO SEE WHO WINS</text>
 
             <!-- Search Grounding -->
-            <rect x="520" y="60" width="230" height="80" class="node-bg ai" />
-            <text x="540" y="90" class="node-title">🌐 Google Search</text>
-            <text x="540" y="110" class="node-desc">Checks the internet to see</text>
-            <text x="540" y="130" class="node-desc">who actually wins the bet.</text>
+            <rect x="520" y="70" width="230" height="80" class="node-bg ai" />
+            <use href="#icon-search" x="535" y="85" width="24" height="24" color="#3fb950" />
+            <text x="570" y="102" class="node-title">Google Search</text>
+            <text x="535" y="130" class="node-desc">Pulls real-time live web data</text>
+
+            <!-- Gemini Box -->
+            <rect x="820" y="180" width="310" height="150" class="node-bg ai" />
+            <use href="#icon-gemini" x="840" y="200" width="26" height="26" color="#3fb950" />
+            <text x="875" y="218" class="node-title">Gemini AI Engine</text>
+            
+            <text x="840" y="255" class="node-desc">Validates the outcome at deadline.</text>
+            <text x="840" y="275" class="node-desc">It parses the web search results and</text>
+            <text x="840" y="295" class="node-desc">strictly decides the YES/NO winner.</text>
 
             <!-- Flow Lines -->
-            <path d="M 620 320 L 700 320 L 700 240 L 780 240" class="packet-stream stream-green" marker-end="url(#arrow-green)" />
-            <text x="625" y="312" class="flow-text">Validate & Format</text>
-            
-            <path d="M 880 160 L 880 100 L 750 100" class="packet-stream stream-green" marker-end="url(#arrow-green)" />
+            <path d="M 640 370 L 730 370 L 730 270 L 820 270" class="packet-stream stream-green" marker-end="url(#arrow-green)" />
+            <path d="M 750 110 L 880 110 L 880 180" class="packet-stream stream-green" marker-end="url(#arrow-green)" />
         </g>
 
         <!-- STEP 4: Database / Gamification -->
         <g class="step-4">
-            <text x="780" y="420" class="phase-title">Phase 3: Gamification</text>
-            
-            <!-- Output to DB -->
-            <path d="M 620 420 L 700 420 L 700 540 L 780 540" class="packet-stream stream-purple" marker-end="url(#arrow-purple)" />
-            <text x="625" y="412" class="flow-text">Write to Ledger</text>
-            
-            <rect x="780" y="440" width="280" height="250" class="node-bg db" />
-            <text x="800" y="475" class="node-title">🗄️ Supabase DB</text>
-            <text x="800" y="495" class="node-desc">Records the final resolution</text>
-            <text x="800" y="515" class="node-desc">Tracks if the loser paid up</text>
-            
-            <!-- Gamification Rules -->
-            <rect x="800" y="540" width="240" height="24" rx="4" fill="#2d2238" />
-            <text x="815" y="556" class="badge-text" fill="#d2a8ff">🏆 Update Gamified Leaderboard</text>
-            
-            <rect x="800" y="575" width="240" height="24" rx="4" fill="#2d2238" />
-            <text x="815" y="591" class="badge-text" fill="#d2a8ff">📊 Recalculate User Win Rate</text>
-            
-            <rect x="800" y="610" width="240" height="24" rx="4" fill="#2d2238" />
-            <text x="815" y="626" class="badge-text" fill="#d2a8ff">🥇 Compare against Peers</text>
+            <!-- Phase Tag -->
+            <rect x="820" y="420" width="330" height="26" class="phase-badge" />
+            <text x="835" y="438" class="phase-text" fill="#d2a8ff">3. RECORD RESOLUTION & REWARD WINNER</text>
 
-            <rect x="800" y="645" width="240" height="24" rx="4" fill="#2d2238" />
-            <text x="815" y="661" class="badge-text" fill="#d2a8ff">💳 Adjust Payer Score (Reliability)</text>
+            <!-- Flow from UI to DB -->
+            <path d="M 640 450 L 730 450 L 730 550 L 820 550" class="packet-stream stream-purple" marker-end="url(#arrow-purple)" />
+            
+            <rect x="820" y="460" width="330" height="290" class="node-bg db" />
+            <use href="#icon-db" x="840" y="480" width="26" height="26" color="#d2a8ff" />
+            <text x="880" y="498" class="node-title">Supabase Ledger</text>
+            <text x="840" y="530" class="node-desc">Database securely writes the final</text>
+            <text x="840" y="550" class="node-desc">outcome and triggers the gamification loop.</text>
+            
+            <!-- Gamification Comprehensive Rules -->
+            <text x="840" y="585" class="phase-subtext" fill="#a5d6ff">4. GAMIFICATION UPDATES:</text>
+
+            <rect x="840" y="600" width="290" height="26" class="list-box" />
+            <text x="855" y="618" class="list-text">→ Track if the loser actually paid</text>
+            
+            <rect x="840" y="635" width="290" height="26" class="list-box" />
+            <text x="855" y="653" class="list-text">→ Update the scores & leaderboard</text>
+            
+            <rect x="840" y="670" width="290" height="26" class="list-box" />
+            <text x="855" y="688" class="list-text">→ Compare reputation with peers</text>
+
+            <rect x="840" y="705" width="290" height="26" class="list-box" />
+            <text x="855" y="723" class="list-text">→ Adjust "Payer Score" & ELO</text>
         </g>
     </svg>
 </div>
