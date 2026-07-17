@@ -52,7 +52,7 @@ It's a social prediction game where:
 👉 **https://davidestrada1.github.io/tapuesto-ai/** — This is the full React app with language toggle, all pages, and all features. Use this link for recruiters.
 
 - **GitHub Repo:** https://github.com/davidestrada1/tapuesto-ai
-- **Repo Slides (presentation):** [https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r](https://davidestrada1.github.io/tapuesto-ai/slides/index.html)
+- **Repo Slides (presentation):** https://davidestrada1.github.io/tapuesto-ai/slides/index.html
 
 ---
 
