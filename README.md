@@ -272,9 +272,5 @@ MIT
 - **Live Demo (full app — use this):** https://davidestrada1.github.io/tapuesto-ai/
   - Includes language toggle (ES/EN), full UI, all features
 - **GitHub Repo:** https://github.com/davidestrada1/tapuesto-ai
-- **AI Studio Prototype (initial):** https://ai.studio/apps/drive/1CjGhZ5Wpgd65W2Y1OYyjKppIhtPYtm3r
-  - Early prototype — used for initial concept & AI prompt engineering
-- **AI Studio Published:** https://tapuesto-ai.ai.studio
-  - Published version from AI Studio (limited vs full React app)
 - **Slides (Markdown):** `slides/slides.md`
-- **Slides (Interactive):** `slides/index.html` (open in browser or deploy)
+- **Slides (Interactive):** https://davidestrada1.github.io/tapuesto-ai/slides/index.html (open in browser or deploy)
